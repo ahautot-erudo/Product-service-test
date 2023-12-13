@@ -18,6 +18,8 @@ public class ProductServiceTest {
 
     private int countBefore = 0;
 
+    private Product product;
+
     @Before
     public void setUp() throws SQLException {
         String testDatabaseFileName = "product.db";
@@ -32,6 +34,11 @@ public class ProductServiceTest {
         productService = new ProductService(db);
 
         countBefore = count();
+
+
+        product = new Product();
+        product.setLabel("Test Product");
+        product.setQuantity(10);
     }
 
     /**
@@ -47,7 +54,7 @@ public class ProductServiceTest {
 
     @Test
     public void testInsert() throws SQLException {
-        
+        productService.insert(product);
     }
 
     @Test
