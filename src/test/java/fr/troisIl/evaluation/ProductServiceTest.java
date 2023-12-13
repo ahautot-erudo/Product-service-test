@@ -57,6 +57,16 @@ public class ProductServiceTest {
         productService.insert(product);
     }
 
+    @Test(expected = RuntimeException.class)
+    public void testInsert_NullProduct_ThrowsException() {
+        productService.insert(null);
+    }
+
+    @Test
+    public void testInsert_NullProduct() {
+        productService.insert(null);
+    }
+
     @Test
     public void testUpdate() throws SQLException {
     }
