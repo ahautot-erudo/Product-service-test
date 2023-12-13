@@ -35,9 +35,8 @@ public class ProductServiceTest {
 
         countBefore = count();
 
-
         product = new Product();
-        product.setLabel("Test Product");
+        product.setLabel("Iphone 15");
         product.setQuantity(10);
     }
 
@@ -79,6 +78,13 @@ public class ProductServiceTest {
     public void testInsert_NullLabel() {
         product.setLabel(null);
         productService.insert(product);
+    }
+
+    @Test
+    public void testInsert_NullQuantity() {
+        product.setQuantity(null);
+        productService.insert(product);
+        assertEquals(0, product.getQuantity().intValue());
     }
 
     @Test
