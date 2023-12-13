@@ -52,6 +52,8 @@ public class ProductServiceTest {
         return resultSet.getInt(1);
     }
 
+    /******************** TEST D'INSERTION ***********************/
+
     @Test
     public void testInsert() throws SQLException {
         productService.insert(product);
@@ -65,6 +67,18 @@ public class ProductServiceTest {
     @Test
     public void testInsert_NullProduct() {
         productService.insert(null);
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testInsert_NullLabel_ThrowsException() {
+        product.setLabel(null);
+        productService.insert(product);
+    }
+
+    @Test
+    public void testInsert_NullLabel() {
+        product.setLabel(null);
+        productService.insert(product);
     }
 
     @Test
