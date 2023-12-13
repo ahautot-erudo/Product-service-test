@@ -115,6 +115,24 @@ public class ProductServiceTest {
 
     @Test
     public void testUpdate() throws SQLException {
+        
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testUpdate_NullProduct_ThrowsException() {
+        productService.update(null);
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testUpdate_NullLabel_ThrowsException() {
+        updateProduct.setLabel(null);
+        productService.update(updateProduct);
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testUpdate_NullId_ThrowsException() {
+        updateProduct.setId(null);
+        productService.update(updateProduct);
     }
 
     @Test
