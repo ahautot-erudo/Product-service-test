@@ -1,5 +1,5 @@
 # Product-service-test
-# Test logiciel
+# Test logiciel java
 
 Voici un service de gestion de produits. A vous de faire les tests unitaires pour valider les règles métiers. A vous de faire les tests d'intégrations pour valider le fonctionnement avec la BDD.
 
