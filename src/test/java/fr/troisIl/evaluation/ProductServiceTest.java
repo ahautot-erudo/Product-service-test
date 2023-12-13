@@ -47,7 +47,7 @@ public class ProductServiceTest {
 
     @Test
     public void testInsert() throws SQLException {
-        //
+        
     }
 
     @Test
