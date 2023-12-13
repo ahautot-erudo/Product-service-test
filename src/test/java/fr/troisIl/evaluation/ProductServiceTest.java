@@ -8,8 +8,8 @@ import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 public class ProductServiceTest {
 
@@ -22,6 +22,9 @@ public class ProductServiceTest {
     private Product existProduct;
     private Product updateProduct;
 
+    /**
+     * @throws SQLException
+     */
     @Before
     public void setUp() throws SQLException {
         String testDatabaseFileName = "product.db";
@@ -50,6 +53,8 @@ public class ProductServiceTest {
         updateProduct.setId(1);
         updateProduct.setLabel("Samsung S23");
         updateProduct.setQuantity(20);
+
+        when(productService.findById(1)).thenReturn(existProduct);
     }
 
     /**
