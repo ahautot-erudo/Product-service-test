@@ -19,6 +19,8 @@ public class ProductServiceTest {
     private int countBefore = 0;
 
     private Product product;
+    private Product existProduct;
+    private Product updateProduct;
 
     @Before
     public void setUp() throws SQLException {
@@ -38,6 +40,16 @@ public class ProductServiceTest {
         product = new Product();
         product.setLabel("Iphone 15");
         product.setQuantity(10);
+
+        existProduct = new Product();
+        existProduct.setId(1);
+        existProduct.setLabel("Samsung S23");
+        existProduct.setQuantity(10);
+
+        updateProduct = new Product();
+        updateProduct.setId(1);
+        updateProduct.setLabel("Samsung S23");
+        updateProduct.setQuantity(20);
     }
 
     /**
@@ -93,6 +105,8 @@ public class ProductServiceTest {
         Product prod = productService.insert(product);
         assertEquals(product, prod);
     }
+
+    /************************** TEST DE MISE A JOURS ******************************/
 
     @Test
     public void testUpdate() throws SQLException {
