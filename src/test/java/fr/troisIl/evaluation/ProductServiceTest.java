@@ -87,6 +87,13 @@ public class ProductServiceTest {
         assertEquals(0, product.getQuantity().intValue());
     }
 
+    // Insertion avec verification dans la base de donnees
+    @Test
+    public void testInsert_ValidProduct() {
+        Product prod = productService.insert(product);
+        assertEquals(product, prod);
+    }
+
     @Test
     public void testUpdate() throws SQLException {
     }
