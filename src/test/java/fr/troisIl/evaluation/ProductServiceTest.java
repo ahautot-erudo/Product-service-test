@@ -68,7 +68,7 @@ public class ProductServiceTest {
         return resultSet.getInt(1);
     }
 
-    /******************** TEST D'INSERTION ***********************/
+    /******************** TEST D'INSERTION ************************/
 
     @Test
     public void testInsert() throws SQLException {
